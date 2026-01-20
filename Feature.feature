@@ -2,7 +2,8 @@ Feature: Login functionality of salesforce Application
 
 Scenario: Login with positive credentials
 
-Given Launch the browser and load the url
+Given Launch the browser 
+Given load the url
 
 When Enter Username
 When Enter password
