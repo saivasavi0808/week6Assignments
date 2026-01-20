@@ -16,16 +16,22 @@ import io.cucumber.java.en.When;
 public class StepDefinition {
 	public ChromeOptions options;
 	public ChromeDriver driver;
-	//launch browser and load the url
-	@Given("Launch the browser and load the url")
-	public void launch_the_browser_and_load_the_url() {
+	//launch browser 
+	@Given("Launch the browser")
+	public void launch_the_browser() {
 		options = new ChromeOptions();
 		options.addArguments("user-data-dir=C:\\Selenium\\ChromeProfile");
 		driver = new ChromeDriver(options);
+		
+	}
+	//load url and maximize window
+
+	@Given("load the url")
+	public void load_the_url() {
 		driver.get("https://login.salesforce.com\r\n");
 		driver.manage().window().maximize();
-	    
 	}
+
 	//enter username
 	@When("Enter Username")
 	public void enter_username() {
@@ -113,3 +119,4 @@ public class StepDefinition {
 
 
 }
+
